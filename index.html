@@ -34,14 +34,17 @@
                 </div>
             </a>
 
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#topics">Curriculum</a></li>
-                <li><a href="#speakers">Speakers</a></li>
-                <li><a href="#registration" class="highlight-link">Register</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#topics" class="nav-item">Curriculum</a></li>
+                <li><a href="#speakers" class="nav-item">Speakers</a></li>
+                <li><a href="#registration" class="highlight-link nav-item">Register</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
             </ul>
-        </div>
     </nav>
 
     <header class="hero">
@@ -380,6 +383,9 @@
                 <p>&copy; 2026 IDAPT Hub Foundation - IIT (BHU). All Rights Reserved.</p>
             </div>
         </div>
+    <div class="mobile-sticky-cta">
+       <a href="https://forms.gle/LeRqwVGc7tLSJDFQ8" target="_blank" class="btn btn-primary">Register Now</a>
+    </div>
     </footer>
 
     <script>
@@ -408,6 +414,34 @@
                 document.getElementById("countdown-container").innerHTML = "<h3>Registration Closed</h3>";
             }
         }, 1000);
+    </script>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const icon = menuToggle.querySelector('i');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
     </script>
 
 </body>

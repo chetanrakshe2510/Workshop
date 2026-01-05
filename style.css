@@ -94,6 +94,26 @@ body {
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
 }
 
+/* [NEW] Sticky Mobile CTA Default Styles */
+.mobile-sticky-cta {
+    display: none; /* Hidden on desktop */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    z-index: 999;
+    text-align: center;
+}
+
+.mobile-sticky-cta .btn {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
 /* =========================================
    3. Navbar
    ========================================= */
@@ -176,31 +196,76 @@ body {
     color: #e74c3c !important; /* Forces the Register link to be red */
 }
 
+/* [NEW] Mobile Menu Button Styles */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    cursor: pointer;
+    margin-left: auto; /* Pushes button to the right */
+}
+
 /* --- Mobile Responsiveness --- */
 @media(max-width: 768px) {
     .navbar .container {
-        flex-direction: column;
+        flex-wrap: wrap; /* Allows wrapping */
         height: auto;
-        padding: 10px;
+        padding: 15px 20px;
     }
 
-    .logo-group {
-        margin-bottom: 15px;
+    /* [NEW] Show the button */
+    .menu-toggle {
+        display: block;
     }
 
+    /* [NEW] Style the collapsible menu */
     .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        display: none; /* Hidden by default */
+        width: 100%;
+        flex-direction: column;
+        margin-top: 20px;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        text-align: center;
+        padding-bottom: 20px;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    /* JavaScript toggles this class */
+    .nav-links.active {
+        display: flex;
     }
 
     .nav-links li {
-        margin: 0;
+        margin: 15px 0;
     }
-    
+
     .logo-text {
-        display: none; /* Hides text on small screens to save space */
+        display: block; /* Optional: Keep text visible if it fits, or use 'none' */
     }
+
+    /* [NEW] Sticky Button Visibility */
+    .mobile-sticky-cta {
+        display: block;
+    }
+
+    /* Ensure content isn't hidden behind the sticky button */
+    body {
+        padding-bottom: 70px; 
+    }
+
+    /* Standard responsive adjustments (keep these) */
+    .hero h1 { font-size: 2.2rem; }
+    .hero-info-grid { flex-direction: column; gap: 10px; }
+    .countdown { gap: 10px; }
+    .cta-group { flex-direction: column; }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* =========================================
