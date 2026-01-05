@@ -24,7 +24,7 @@ body {
 }
 
 .section {
-    padding: 80px 0; /* Increased padding for better spacing */
+    padding: 80px 0;
 }
 
 .section-title {
@@ -54,7 +54,7 @@ body {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -128,7 +128,7 @@ body {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between; /* Pushes Logo to left, Links to right */
+    justify-content: space-between;
     align-items: center;
     height: 80px;
 }
@@ -142,7 +142,7 @@ body {
 }
 
 .nav-logo {
-    height: 50px; /* Controls image size */
+    height: 50px;
     width: auto;
 }
 
@@ -169,15 +169,15 @@ body {
 
 /* --- Navigation Links Styling --- */
 .nav-links {
-    list-style: none; /* Removes the bullet points */
-    display: flex;    /* Makes them horizontal */
+    list-style: none;
+    display: flex;
     align-items: center;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li {
-    margin-left: 30px; /* Space between links */
+    margin-left: 30px;
 }
 
 .nav-links a {
@@ -193,7 +193,7 @@ body {
 }
 
 .highlight-link {
-    color: #e74c3c !important; /* Forces the Register link to be red */
+    color: #e74c3c !important;
 }
 
 /* [NEW] Mobile Menu Button Styles */
@@ -204,68 +204,7 @@ body {
     font-size: 1.5rem;
     color: #2c3e50;
     cursor: pointer;
-    margin-left: auto; /* Pushes button to the right */
-}
-
-/* --- Mobile Responsiveness --- */
-@media(max-width: 768px) {
-    .navbar .container {
-        flex-wrap: wrap; /* Allows wrapping */
-        height: auto;
-        padding: 15px 20px;
-    }
-
-    /* [NEW] Show the button */
-    .menu-toggle {
-        display: block;
-    }
-
-    /* [NEW] Style the collapsible menu */
-    .nav-links {
-        display: none; /* Hidden by default */
-        width: 100%;
-        flex-direction: column;
-        margin-top: 20px;
-        background-color: #fff;
-        border-top: 1px solid #eee;
-        text-align: center;
-        padding-bottom: 20px;
-        animation: slideDown 0.3s ease-out;
-    }
-
-    /* JavaScript toggles this class */
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-    }
-
-    .logo-text {
-        display: block; /* Optional: Keep text visible if it fits, or use 'none' */
-    }
-
-    /* [NEW] Sticky Button Visibility */
-    .mobile-sticky-cta {
-        display: block;
-    }
-
-    /* Ensure content isn't hidden behind the sticky button */
-    body {
-        padding-bottom: 70px; 
-    }
-
-    /* Standard responsive adjustments (keep these) */
-    .hero h1 { font-size: 2.2rem; }
-    .hero-info-grid { flex-direction: column; gap: 10px; }
-    .countdown { gap: 10px; }
-    .cta-group { flex-direction: column; }
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    margin-left: auto;
 }
 
 /* =========================================
@@ -273,21 +212,19 @@ body {
    ========================================= */
 .hero {
     position: relative;
-    /* Clean academic/tech background image */
     background: url('IIT_BHU_stylized.png') no-repeat center center/cover;
-    height: 90vh; /* Takes up most of the screen */
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: -1px; /* Removes tiny gap if any */
+    margin-top: -1px;
 }
 
 .hero .overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    /* Gradient overlay: Dark Blue to Purple */
     background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(106, 17, 203, 0.85));
 }
 
@@ -326,7 +263,7 @@ body {
     opacity: 0.9;
 }
 
-/* Hero Info Grid (Date & Location) */
+/* Hero Info Grid */
 .hero-info-grid {
     display: flex;
     justify-content: center;
@@ -394,35 +331,30 @@ body {
 }
 
 /* =========================================
-   5. About Section Cards (UPDATED)
+   5. About & Cards
    ========================================= */
-
 #about {
-    background: #fff; /* Reset background to white */
-    color: #333;      /* Reset text color to standard dark grey */
-    padding: 80px 0;  /* Standard section padding */
+    background: #fff;
+    color: #333;
+    padding: 80px 0;
 }
 
-/* Ensure the Section Title uses the standard dark blue color */
 #about .section-title {
     color: #2c3e50;
-    text-shadow: none; /* Remove the shadow we added earlier */
+    text-shadow: none;
     margin-bottom: 50px;
 }
 
-/* Reset the paragraph text to standard grey */
 #about > .container > p {
     color: #555;
     text-shadow: none;
 }
 
-/* Remove the shadow from the title underline */
 #about .section-title::after {
     background: #e74c3c;
     box-shadow: none;
 }
 
-/* Logo styling can remain as is */
 .org-logo {
     max-width: 100px;
     height: auto;
@@ -430,12 +362,11 @@ body {
     display: block;
 }
 
-/* Standard Card Styling */
 .card {
     background: #fff;
     padding: 30px;
     border-left: 5px solid #3498db;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft, standard shadow */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     border-radius: 0 8px 8px 0;
     color: #333;
 }
@@ -446,29 +377,22 @@ body {
     font-size: 1.4rem;
 }
 
-
-/* =========================================
-   Horizontal About Card Styling
-   ========================================= */
-
-/* Specific class for horizontal cards to avoid breaking other cards */
+/* Horizontal About Card Styling */
 .about-card-horizontal {
-    display: flex;             /* Enables side-by-side layout */
-    align-items: center;       /* Vertically centers the logo with the text */
-    gap: 25px;                 /* Space between logo and text */
-    text-align: left;          /* Ensures text aligns left, not center */
-    padding: 40px 30px;        /* Slightly more padding looks better here */
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    text-align: left;
+    padding: 40px 30px;
 }
 
-/* Adjust the logo for horizontal layout */
 .about-card-horizontal .org-logo {
-    width: 110px;              /* Fixed width for consistency */
-    max-width: none;           /* Override previous max-width */
-    margin: 0;                 /* Remove the auto margin that centered it */
-    flex-shrink: 0;            /* Prevents logo from shrinking if text is long */
+    width: 110px;
+    max-width: none;
+    margin: 0;
+    flex-shrink: 0;
 }
 
-/* Styling for the text container */
 .about-card-horizontal .card-text h3 {
     margin-bottom: 10px;
     margin-top: 0;
@@ -476,26 +400,24 @@ body {
 
 .about-card-horizontal .card-text p {
     margin: 0;
-    font-size: 0.95rem;        /* Slightly smaller font for dense text blocks */
+    font-size: 0.95rem;
     color: #555;
 }
 
-/* Mobile Responsiveness: Stack them back up on small phones */
 @media (max-width: 600px) {
     .about-card-horizontal {
-        flex-direction: column; /* Stack vertically on mobile */
-        text-align: center;     /* Center align text on mobile */
+        flex-direction: column;
+        text-align: center;
     }
-    
     .about-card-horizontal .org-logo {
         margin-bottom: 20px;
     }
 }
 
 /* =========================================
-   6. Course Topics Grid
+   6. Topics, Speakers & Fees
    ========================================= */
-.topics-grid {
+.topics-grid, .speakers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
@@ -532,15 +454,6 @@ body {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: #2c3e50;
-}
-
-/* =========================================
-   7. Speakers Section (Cards)
-   ========================================= */
-.speakers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 30px;
 }
 
 .speaker-card {
@@ -585,9 +498,6 @@ body {
     font-weight: 500;
 }
 
-/* =========================================
-   8. Registration & Fees
-   ========================================= */
 .fee-table-wrapper {
     background: #fff;
     border-radius: 8px;
@@ -615,10 +525,6 @@ body {
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
-}
-
-.fee-table tbody tr:last-child td {
-    border-bottom: none;
 }
 
 .fee-table tbody tr:hover {
@@ -660,11 +566,10 @@ body {
 
 .bank-details p:last-child {
     border-bottom: none;
-    margin-bottom: 0;
 }
 
 /* =========================================
-   9. Footer
+   7. Footer
    ========================================= */
 footer {
     background: #1a252f;
@@ -701,28 +606,78 @@ footer {
 }
 
 /* =========================================
-   10. Responsive Design
+   8. Responsive Design (ALL IN ONE)
    ========================================= */
 @media(max-width: 768px) {
     .navbar .container {
-        flex-direction: column;
-        height: auto;
-        padding: 15px;
-    }
-    
-    .nav-links {
-        margin-top: 15px;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        height: auto;
+        padding: 15px 20px;
     }
-    
+
+    /* Mobile Menu Logic */
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 20px;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        text-align: center;
+        padding-bottom: 20px;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
     .nav-links li {
-        margin: 0;
+        margin: 15px 0;
+    }
+
+    .logo-text {
+        display: block;
+    }
+
+    /* Sticky Button */
+    .mobile-sticky-cta {
+        display: block;
+    }
+
+    body {
+        padding-bottom: 70px; 
+    }
+
+    /* Hero Fixes */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 130px;
+        padding-bottom: 80px;
+        background-attachment: scroll;
+    }
+
+    .badge {
+        font-size: 0.65rem;
+        line-height: 1.3;
+        padding: 8px 15px;
+        margin-bottom: 15px;
+        white-space: normal;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
     }
 
     .hero-info-grid {
@@ -730,20 +685,22 @@ footer {
         gap: 10px;
         align-items: center;
     }
-    
+
     .countdown {
         gap: 10px;
+        flex-wrap: wrap;
     }
     
     .time-unit {
-        min-width: 70px;
+        min-width: 60px;
         padding: 10px;
     }
-    
+
     .time-unit span {
         font-size: 1.5rem;
     }
 
+    /* General Layout Fixes */
     .cta-group {
         flex-direction: column;
     }
@@ -756,4 +713,9 @@ footer {
         display: block;
         overflow-x: auto;
     }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
