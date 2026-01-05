@@ -147,7 +147,7 @@ body {
     font-weight: 500;
 }
 
-/* --- Navigation Links Styling (This was missing) --- */
+/* --- Navigation Links Styling --- */
 .nav-links {
     list-style: none; /* Removes the bullet points */
     display: flex;    /* Makes them horizontal */
@@ -209,7 +209,7 @@ body {
 .hero {
     position: relative;
     /* Clean academic/tech background image */
-    background: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    background: url('IIT_BHU_stylized.png') no-repeat center center/cover;
     height: 90vh; /* Takes up most of the screen */
     display: flex;
     align-items: center;
@@ -329,27 +329,102 @@ body {
 }
 
 /* =========================================
-   5. About Section Cards
+   5. About Section Cards (UPDATED)
    ========================================= */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 40px;
+
+#about {
+    background: #fff; /* Reset background to white */
+    color: #333;      /* Reset text color to standard dark grey */
+    padding: 80px 0;  /* Standard section padding */
 }
 
+/* Ensure the Section Title uses the standard dark blue color */
+#about .section-title {
+    color: #2c3e50;
+    text-shadow: none; /* Remove the shadow we added earlier */
+    margin-bottom: 50px;
+}
+
+/* Reset the paragraph text to standard grey */
+#about > .container > p {
+    color: #555;
+    text-shadow: none;
+}
+
+/* Remove the shadow from the title underline */
+#about .section-title::after {
+    background: #e74c3c;
+    box-shadow: none;
+}
+
+/* Logo styling can remain as is */
+.org-logo {
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto 15px auto;
+    display: block;
+}
+
+/* Standard Card Styling */
 .card {
     background: #fff;
     padding: 30px;
     border-left: 5px solid #3498db;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Soft, standard shadow */
     border-radius: 0 8px 8px 0;
+    color: #333;
 }
 
 .card h3 {
     margin-bottom: 15px;
     color: #2c3e50;
     font-size: 1.4rem;
+}
+
+
+/* =========================================
+   Horizontal About Card Styling
+   ========================================= */
+
+/* Specific class for horizontal cards to avoid breaking other cards */
+.about-card-horizontal {
+    display: flex;             /* Enables side-by-side layout */
+    align-items: center;       /* Vertically centers the logo with the text */
+    gap: 25px;                 /* Space between logo and text */
+    text-align: left;          /* Ensures text aligns left, not center */
+    padding: 40px 30px;        /* Slightly more padding looks better here */
+}
+
+/* Adjust the logo for horizontal layout */
+.about-card-horizontal .org-logo {
+    width: 110px;              /* Fixed width for consistency */
+    max-width: none;           /* Override previous max-width */
+    margin: 0;                 /* Remove the auto margin that centered it */
+    flex-shrink: 0;            /* Prevents logo from shrinking if text is long */
+}
+
+/* Styling for the text container */
+.about-card-horizontal .card-text h3 {
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.about-card-horizontal .card-text p {
+    margin: 0;
+    font-size: 0.95rem;        /* Slightly smaller font for dense text blocks */
+    color: #555;
+}
+
+/* Mobile Responsiveness: Stack them back up on small phones */
+@media (max-width: 600px) {
+    .about-card-horizontal {
+        flex-direction: column; /* Stack vertically on mobile */
+        text-align: center;     /* Center align text on mobile */
+    }
+    
+    .about-card-horizontal .org-logo {
+        margin-bottom: 20px;
+    }
 }
 
 /* =========================================
