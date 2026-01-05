@@ -658,7 +658,7 @@ footer {
     .hero {
         /* Stop forcing it to be exactly 90% of screen height */
         height: auto !important;
-        min-height: 100vh; /* Ensure it's at least one full screen */
+        min-height: 90vh; /* Ensure it's at least one full screen */
         
         /* 2. DISABLE CENTER ALIGNMENT TO FIX CROPPING */
         /* Instead of centering, we stack content from the top down */
