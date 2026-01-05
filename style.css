@@ -654,13 +654,35 @@ footer {
     }
 
     /* Hero Fixes */
+    /* FLEXIBLE HEIGHT TO PREVENT CROPPING */
     .hero {
-        height: auto;
-        min-height: 100vh;
-        padding-top: 130px;
-        padding-bottom: 80px;
+        /* Stop forcing it to be exactly 90% of screen height */
+        height: auto !important;
+        min-height: 100vh; /* Ensure it's at least one full screen */
+        
+        /* 2. DISABLE CENTER ALIGNMENT TO FIX CROPPING */
+        /* Instead of centering, we stack content from the top down */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Aligns content to the top */
+        align-items: center;         /* Keeps text centered horizontally */
+
+        /* 3. ADD PADDING TO PREVENT OVERLAP */
+        padding-top: 150px;   /* Big space at top so Navbar doesn't cover the Badge */
+        padding-bottom: 120px; /* Big space at bottom so Red Button isn't cut off */
+        
+        /* Fix background behavior on mobile */
+        background-position: center top; 
         background-attachment: scroll;
     }
+
+    /* Optional: Add a little breathing room for the content wrapper */
+    .hero-content {
+        width: 100%;
+        padding: 0 15px; /* Prevent text touching screen edges */
+    }
+
+
 
     .badge {
         font-size: 0.65rem;
